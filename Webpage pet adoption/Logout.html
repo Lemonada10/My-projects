@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Logout</title>
+	 <meta charset="utf-8">
+
+      <script src="Website.js" defer>
+
+      </script>
+     <style>
+          body { 
+
+               background-color: rgb(201, 168, 168); 
+               background: linear-gradient(to right, pink, rgb(234, 71, 71));
+               margin: 0;
+          }
+
+          
+          .logo {
+               width: 60px; 
+               margin-left: 15px;
+          }
+
+          #time {
+               margin-left: 50px
+          }
+
+          .header { 
+              margin: 0;
+              color: purple;
+              background-color: rgb(247, 136, 154);
+              text-align: center;
+              border: 10px solid purple;
+              font-style: italic;
+              height: 90px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-shadow: 2px 2px 4px grey;
+              font-size: 25px;
+
+        }
+         
+          .menu { 
+                  margin: 0;
+                  padding: 0;
+                  top: 100px;
+                  left: 0;
+                  position: absolute;
+                  border: 5px solid purple;
+                  background: linear-gradient(to right, #f9c253, pink);
+                  background-color: #f9c253;
+                 
+          }
+          .menu li { 
+                    font-style: bold;
+                    padding: 25px;
+                    font-size: 30px;
+                    color: purple;
+                    border: 5px solid purple;
+                    font-style: italic;
+               
+          }
+
+          .menu li:hover {
+               color: orange;
+               background-color: orange;
+               cursor: grabbing;
+          }
+
+          li:active {
+               border-bottom: 1px solid black;
+          }
+           .message {
+                margin-top: 50px;
+                margin-left: 400px;
+                color: purple;
+                font-style: arial;
+                display: flex;
+                
+           }
+
+          .footer {
+               margin: 0;
+               position: absolute;
+               top: 140vh;
+               background-color:orange;
+               height: 120px;
+               text-align: center;
+               width: 100%;
+               
+
+          }
+          .footer-words {
+               font-weight: normal;
+          }
+
+          h2 {
+            font-weight: normal;
+        }
+
+          
+          .form {
+               position: absolute;
+               color: purple;
+               font-style: arial;
+               margin-left: 380px;
+               margin-right: 25px;
+               margin-top: 50px;
+          }
+        
+          
+     </style>
+</head>
+
+<body>
+     <div class="header"> 
+          <h1 class="title"> Pets' Family</h1>
+          <a href="Home page.html">
+               <img src="Logo.jpg" class="logo">
+               </a>
+          <div id="time"></div>
+     </div>
+
+     <div class="footer">
+          <h3 class="footer-words"> Your information will not be sold or misused</h3>
+          <a href="privacy.html"> Privacy & Security document </a>
+     </div>
+
+
+<ul class="menu">
+     <li><a href="Home page.html" style="text-decoration: none;">Home page</a></li>
+     <li><a href="Create-account.html" style="text-decoration: none; ">Create Account</li></a>
+     <li><a href="Find a dog-cat.html" style="text-decoration: none;">Find a dog/cat</li></a>
+     <li><a href="Dog Care.html" style="text-decoration: none;">Dog Care</li></a>
+     <li><a href="Cat Care.html" style="text-decoration: none;">Cat Care</li></a>
+     <li><a href="Have a pet to give away.html" style="text-decoration: none;">Have a pet to give away</li></a>
+     <li><a href="Login.html" style="text-decoration: none;">Log In</li></a>
+     <li><a href="Logout.html" style="color: red; font-weight: bold;">Log Out</li></a>
+     <li><a href="Contact Us.html" style="text-decoration: none;">Contact Us</li></a>
+</ul>
+<form class="form" action="/logout" method="POST" >
+
+<h1> Logout</h1>
+<br><br>
+<button type="submit">Logout</button>
+
+</form>
+
+</body>
+</html>

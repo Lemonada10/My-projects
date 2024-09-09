@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>
+     Have a pet to give away
+     </title>
+	 <meta charset="utf-8">
+      <script src="Website.js" defer>
+
+      </script>
+     <style>
+          body { 
+
+          background-color: rgb(201, 168, 168); 
+          background: linear-gradient(to right, pink, rgb(234, 71, 71));
+          margin: 0;
+          }
+
+          .logo {
+          width: 60px; 
+          margin-left: 15px;
+          }
+          .header { 
+          margin: 0;
+          color: purple;
+          background-color: rgb(247, 136, 154);
+          text-align: center;
+          border: 10px solid purple;
+          font-style: italic;
+          height: 90px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-shadow: 2px 2px 4px grey;
+          font-size: 25px;
+
+          }
+          .img { 
+               
+               margin-left: 550px;
+               width: 200px;
+               height: 150px; 
+               float: center; 
+               border: 5px;
+               border-radius: 60%;
+               border: 2px solid purple;
+               margin-top:20px;
+        }
+
+        .img2 { 
+               
+               margin-left: 150px;
+               width: 200px;
+               height: 150px;  
+               border: 5px;
+               border-radius: 60%;
+               border: 2px solid purple;
+        }
+        .goodbye {
+            margin: 0;
+            margin-left: 30px;
+            padding: 0;
+            top: 1200px;
+            position: absolute;
+            color: purple;
+        }
+        .img3 { 
+               margin: 0;
+               margin-left: 30px;
+               padding: 0;
+               top: 1000px;
+               left: 0;
+               width: 220px;
+               height: 170px;  
+               border-radius: 60%;
+               border: 2px solid purple;
+               position: absolute;
+        }
+        .menu { 
+                  margin: 0;
+                  padding: 0;
+                  top: 100px;
+                  left: 0;
+                  position: absolute;
+                  border: 5px solid purple;
+                  background: linear-gradient(to right, #f9c253, pink);
+                  background-color: #f9c253;
+                 
+          }
+          .menu li { 
+                    font-style: bold;
+                    padding: 25px;
+                    font-size: 30px;
+                    color: purple;
+                    border: 5px solid purple;
+                    font-style: italic;
+               
+          }
+
+          .menu li:hover {
+               color: orange;
+               background-color: orange;
+               cursor: grabbing;
+          }
+
+          li:active {
+               border-bottom: 1px solid black;
+          }
+          #form {
+               position: absolute;
+               color: purple;
+               margin-left: 380px;
+               font-style: arial;
+               margin-right: 25px;
+          }
+          .animal {
+            font-size: larger;
+          }
+          .breed {
+            font-size: larger;
+          }
+          .clear {
+            margin-left: 25px;
+          }
+          .footer {
+               margin: 0;
+               position: absolute;
+               top: 180vh;
+               background-color:orange;
+               height: 120px;
+               text-align: center;
+               width: 100%;
+
+          }
+          .footer-words {
+               font-weight: normal;
+          }
+          
+          
+          
+     </style>
+</head>
+
+<body>
+     <div class="header"> 
+          <h1> Pets' Family</h1>
+          <a href="Home page.html">
+               <img src="Logo.jpg" class="logo">
+               </a>
+               <div id="time"></div>
+     </div>
+<a href="Home page.html">
+<img class= "img" src="pexels-pixabay-57416.jpg" alt="Cute cat">  </a>
+<!-- https://pixabay.com/fr/images/search/cat%20images/ -->
+
+<a href="Home page.html">
+<img class= "img2" src="pexels-photo-58997.jpeg" alt="Cute dog">  </a>
+<!-- https://pixabay.com/images/search/dog/ -->
+
+
+<ul class="menu">
+     <li><a href="Home page.html" style="text-decoration: none;">Home page</a></li>
+     <li><a href="Create-account.html" style="text-decoration: none; ">Create Account</li></a>
+     <li><a href="Find a dog-cat.html" style="text-decoration: none; ">Find a dog/cat</li></a>
+     <li><a href="Dog Care.html" style="text-decoration: none;">Dog Care</li></a>
+     <li><a href="Cat Care.html" style="text-decoration: none;">Cat Care</li></a>
+     <li><a href="Have a pet to give away.html" style="color: red; font-weight: bold;">Have a pet to give away</li></a>
+     <li><a href="Login.html" style="text-decoration: none;">Log In</li></a>
+     <li><a href="Logout.html" style="text-decoration: none;">Log Out</li></a>
+     <li><a href="Contact Us.html" style="text-decoration: none;">Contact Us</li></a>
+</ul>
+
+<div class="footer">
+     <h3 class="footer-words"> Your information will not be sold or misused</h3>
+     <a href="privacy.html"> Privacy & Security document </a>
+</div>
+<h2 class="goodbye"> Hope to you see again &#10084;</h2>
+<a href="Home page.html">
+    <img class= "img3" src="pexels-felix-mittermeier-14045199.jpg" alt="Cute cat">  </a>
+<!-- https://pixabay.com/fr/images/search/cat%20images/ -->
+
+<form id="form" action="/give_away" method="POST" onsubmit="return give_away()"> 
+
+<h1><u>Pet Give away Form:</u></h1>
+
+<h2> Please select which pet you would like to give away </h2>
+<label class="animal"> Cat <input type="radio" id="Cat2" value="Cat"name="animal"></label>
+<label class="animal"> Dog <input type="radio" id="Dog2" value="Dog"name="animal"></label>
+<label class="animal"> Mixed <input type="radio" id="Mixed2" value="Mixed" name="animal"></label>
+
+<h2>Age of animal:</h2>
+
+<label class="age">
+    <select name="age" id="age">
+        <option>Less than 2 years</option>
+        <option>2-4 years</option>
+        <option>4-6 years</option>
+        <option>6-8 years</option>
+        <option>8-10 years</option>
+        <option>10-12 years</option>
+        <option>More than 12 years</option>
+        <option>Doesn't matter</option>
+    </select> 
+</label>  
+<h2> Animal gender:</h2>
+<label class="gender">Male <input type="radio" id="Male2" value="Male" name="gender"></label>
+<label class="gender">Female <input type="radio" id="Female2" value="Female" name="gender"></label>
+
+<h3> With whom does it get along with: dogs, cats or small children?</h3>
+<label class="get-along">Dogs<input type="checkbox" id="Dogs2" value="Dogs" name="get-along"></label>
+<label class="get-along">Cats<input type="checkbox" id="Cats2" value="Cats" name="get-along"></label>
+<label class="get-along">Children<input type="checkbox" id="Children" value="Children" name="get-along"></label>
+<label class="get-along">All of them<input type="checkbox" id="AllOfThem" value="AllOfThem" name="get-along"></label>
+<label class="get-along">None<input type="checkbox" id="None" value="None"name="get-along"></label>
+<h2>Any important comments? (optional)</h2>
+<label class="comments"><textarea id="comments" name="comments" rows="7" cols="60"></textarea></label>
+<h2>The current owner's full name:</h2>
+<label class="Firstname">First name: <input type="text" id="Firstname"  name="FirstName"></label>&nbsp;&nbsp;
+<label class="Lastname">Last name: <input type="text" id="Lastname"  name="LastName"></label>
+<h2>The current owner's email adresse:</h2>
+<label class="Email">Email: <input type="text" id="email"></label>
+<h3>Thank you for the information, please submit your form or clear your answers</h3>
+
+<label class="submit"><input type="Submit" id="submit"></label>
+<label class="clear"><input type="reset" value="Clear "></label>
+<br><br>
+<div id="error_message" style="color: red;"></div>
+
+<div id="email_error" style="color: red;"></div>
+
+</form>
+
+
+</body>
+
+
+
+
+</html> 
