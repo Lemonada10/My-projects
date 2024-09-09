@@ -1,0 +1,142 @@
+PQ Class:
+    Properties:
+        arrPQ: array of Entries
+        indexLastItem: integer
+        isMinHeap: boolean
+        isLeft: boolean
+        isRoot: boolean
+        height: integer
+
+    Methods:
+        Constructor(index, isMinHeap):
+            Initialize arrPQ with size index
+            indexLastItem <- 0
+            this.isMinHeap <- isMinHeap
+            this.isRoot <- true
+
+        toggle():
+            isMinHeap <- NOT isMinHeap
+            For index <- indexLastItem // 2 down to 0:
+                Call downHeap(index)
+
+        removeTop() -> Entry:
+            If isEmpty throw NoSuchElementException
+            entry <- arrPQ[0]
+            Move last item to root, arrPQ[0] <- arrPQ[indexLastItem - 1]
+            arrPQ[indexLastItem - 1] <- null
+            Decrement indexLastItem
+            Call downHeap(0)
+            Return entry
+
+        checkSize():
+            if arrPQ.length = indexLastItem
+                Create newArr of double size
+                Copy elements from arrPQ to newArr
+                arrPQ <- newArr
+
+        insert(key, value):
+            Call checkSize
+            Create new Entry with key and value
+            arrPQ[indexLastItem] <- entry;
+            Call upHeap(indexLastItem)
+            Increment indexLastItem
+
+        upHeap(index):
+            While index > 0:
+                parent <- (index - 1) // 2
+                If compare arrPQ[index] with arrPQ[parent] is < 0:
+                    Swap arrPQ[index] and arrPQ[parent]
+                    index <- parent
+                Else break
+
+        downHeap(index):
+            While 2 * index + 1 < indexLastItem:
+                left <- 2 * index + 1
+                right <- to 2 * index + 2
+                smallest <- left
+                If right < indexLastItem AND compare arrPQ[right] with arrPQ[left] is < 0:
+                    smallest <- right
+                If compare arrPQ[smallest] with arrPQ[index] is < 0:
+                    Swap arrPQ[index] and arrPQ[smallest]
+                    index <- smallest
+                Else break
+
+        top() -> Entry:
+            If not isEmpty:
+                Return arrPQ[0]
+            Else:
+                Print "The array is empty"
+                Return null
+
+        remove(entry) -> Entry:
+            Find entry in arrPQ
+            If not found, throw NoSuchElementException
+            removedEntry <- arrPQ[index]
+            Move last item to index
+            Decrement indexLastItem
+            Call downHeap(index)
+            Call upHeap(index)
+            arrPQ[indexLastItem] <- null;
+            Return removedEntry
+
+        replaceKey(entry, newKey) -> K:
+            Find entry in arrPQ
+            If not found, print "No such element is found" and return null
+            Set oldKey to entry's key
+            Update entry's key to newKey
+            If isMinHeap:
+                If newKey < oldKey:
+                    Call upHeap(index)
+                Else:
+                    Call downHeap(index)
+            Else:
+                If oldKey < newKey:
+                    Call upHeap(index)
+                Else:
+                    Call downHeap(index)
+            Return oldKey
+
+        replaceValue(entry, newValue) -> V:
+            Find entry in arrPQ
+            If not found, print "No such element is found" and return null
+            Set oldValue to entry's value
+            Update entry's value to newValue
+            Return oldValue
+
+        state() -> String:
+            If isMinHeap:
+                Return "Min"
+            Else:
+                Return "Max"
+
+        isEmpty() -> boolean:
+            Return true if arrPQ[0] is null, else return false
+
+        size() -> integer:
+            Return indexLastItem
+
+        print():
+            For each element in arrPQ:
+                If element is not null:
+                    Print element
+
+        compare(e1, e2) -> integer:
+            Return comparison result based on isMinHeap
+
+Entry Class:
+    Properties:
+        key: K
+        value: V
+
+    Methods:
+        Constructor(key, value):
+            Set key and value
+
+        print():
+            Print key and value
+
+        equals(o) -> boolean:
+            Return true if o is same instance, else compare keys and values
+
+        toString() -> String:
+            Return string representation of Entry
